@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Lista de Tareas</title>
+ feature/ui-design
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,6 +52,13 @@
         <input type="text" id="nuevaTarea" placeholder="Nueva tarea">
         <button onclick="agregarTarea()">Agregar</button>
     </div>
+
+</head>
+<body>
+    <h1>Mi Lista de Tareas</h1>
+    <input type="text" id="nuevaTarea" placeholder="Nueva tarea">
+    <button onclick="agregarTarea()">Agregar</button>
+   main
     <ul id="listaTareas"></ul>
 
     <script>
@@ -60,15 +68,27 @@
             if (tarea) {
                 const li = document.createElement('li');
                 li.textContent = tarea;
+ feature/ui-design
                 
                 const btnEliminar = document.createElement('button');
                 btnEliminar.textContent = 'Eliminar';
                 btnEliminar.className = 'delete-btn';
+
+ feature/delete-task
+                
+                // Botón eliminar
+                const btnEliminar = document.createElement('button');
+                btnEliminar.textContent = 'Eliminar';
+       main
                 btnEliminar.onclick = function() {
                     li.remove();
                 };
                 
                 li.appendChild(btnEliminar);
+ feature/ui-design
+
+ main
+ main
                 document.getElementById('listaTareas').appendChild(li);
                 input.value = '';
             }
