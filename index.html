@@ -16,6 +16,18 @@
             if (tarea) {
                 const li = document.createElement('li');
                 li.textContent = tarea;
+ feature/delete-task
+                
+                // Botón eliminar
+                const btnEliminar = document.createElement('button');
+                btnEliminar.textContent = 'Eliminar';
+                btnEliminar.onclick = function() {
+                    li.remove();
+                };
+                
+                li.appendChild(btnEliminar);
+=======
+ main
                 document.getElementById('listaTareas').appendChild(li);
                 input.value = '';
             }
