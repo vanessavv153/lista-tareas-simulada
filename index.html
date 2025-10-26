@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <h1>Mi Lista de Tareas</h1>
+    <input type="text" id="nuevaTarea" placeholder="Nueva tarea">
+    <button onclick="agregarTarea()">Agregar</button>
+    <ul id="listaTareas"></ul>
+
+    <script>
+        function agregarTarea() {
+            const input = document.getElementById('nuevaTarea');
+            const tarea = input.value.trim();
+            if (tarea) {
+                const li = document.createElement('li');
+                li.textContent = tarea;
+                
+                // Botón eliminar
+                const btnEliminar = document.createElement('button');
+                btnEliminar.textContent = 'Eliminar';
+                btnEliminar.onclick = function() {
+                    li.remove();
+                };
+                
+                li.appendChild(btnEliminar);
+                document.getElementById('listaTareas').appendChild(li);
+                input.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
