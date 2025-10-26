@@ -2,11 +2,63 @@
 <html>
 <head>
     <title>Lista de Tareas</title>
+ feature/ui-design
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        #nuevaTarea {
+            padding: 10px;
+            width: 70%;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: white;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .delete-btn {
+            background-color: #ff4444;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mi Lista de Tareas</h1>
+    <div>
+        <input type="text" id="nuevaTarea" placeholder="Nueva tarea">
+        <button onclick="agregarTarea()">Agregar</button>
+    </div>
+
 </head>
 <body>
     <h1>Mi Lista de Tareas</h1>
     <input type="text" id="nuevaTarea" placeholder="Nueva tarea">
     <button onclick="agregarTarea()">Agregar</button>
+   main
     <ul id="listaTareas"></ul>
 
     <script>
@@ -16,17 +68,26 @@
             if (tarea) {
                 const li = document.createElement('li');
                 li.textContent = tarea;
+ feature/ui-design
+                
+                const btnEliminar = document.createElement('button');
+                btnEliminar.textContent = 'Eliminar';
+                btnEliminar.className = 'delete-btn';
+
  feature/delete-task
                 
                 // Botón eliminar
                 const btnEliminar = document.createElement('button');
                 btnEliminar.textContent = 'Eliminar';
+       main
                 btnEliminar.onclick = function() {
                     li.remove();
                 };
                 
                 li.appendChild(btnEliminar);
-=======
+ feature/ui-design
+
+ main
  main
                 document.getElementById('listaTareas').appendChild(li);
                 input.value = '';
